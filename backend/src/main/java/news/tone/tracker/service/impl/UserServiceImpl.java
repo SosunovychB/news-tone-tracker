@@ -2,8 +2,8 @@ package news.tone.tracker.service.impl;
 
 import java.util.List;
 import lombok.RequiredArgsConstructor;
-import news.tone.tracker.dto.CreateUserRequestDto;
 import news.tone.tracker.dto.UserDto;
+import news.tone.tracker.dto.registration.CreateUserRequestDto;
 import news.tone.tracker.exceptiion.EntityNotFoundException;
 import news.tone.tracker.mapper.UserMapper;
 import news.tone.tracker.model.User;
