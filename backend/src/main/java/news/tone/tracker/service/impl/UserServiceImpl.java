@@ -10,6 +10,7 @@ import news.tone.tracker.model.User;
 import news.tone.tracker.repository.RoleRepository;
 import news.tone.tracker.repository.UserRepository;
 import news.tone.tracker.service.UserService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -24,6 +25,14 @@ public class UserServiceImpl implements UserService {
         User user = userMapper.createUserRequestToUser(createUserRequestDto);
         User savedUser = userRepository.save(user);
         return userMapper.userToDto(savedUser);
+    }
+
+    @Override
+    public UserDto getUserByEmail(String email) {
+        return userMapper.userToDto(userRepository.findUserByEmail(email).orElseThrow(
+                () -> new UsernameNotFoundException("Can not find user with email " + email)
+                )
+        );
     }
 
     @Override

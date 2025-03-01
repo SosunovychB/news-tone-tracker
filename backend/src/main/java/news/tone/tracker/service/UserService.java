@@ -5,9 +5,11 @@ import news.tone.tracker.dto.UserDto;
 import news.tone.tracker.dto.registration.CreateUserRequestDto;
 
 public interface UserService {
-    List<UserDto> getAllUsers();
-
     UserDto registerNewUser(CreateUserRequestDto createUserRequestDto);
+
+    UserDto getUserByEmail(String email);
+
+    List<UserDto> getAllUsers();
 
     UserDto getUserById(long id);
 }
