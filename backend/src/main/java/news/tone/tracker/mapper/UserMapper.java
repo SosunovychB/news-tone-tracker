@@ -1,8 +1,8 @@
 package news.tone.tracker.mapper;
 
 import news.tone.tracker.config.MapperConfig;
-import news.tone.tracker.dto.CreateUserRequestDto;
 import news.tone.tracker.dto.UserDto;
+import news.tone.tracker.dto.registration.CreateUserRequestDto;
 import news.tone.tracker.model.User;
 import org.mapstruct.Mapper;
 

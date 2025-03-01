@@ -1,0 +1,18 @@
+databaseChangeLog:
+  - changeSet:
+      id: create_users_roles_table
+      author: Sosunovych Bohdan
+      changes:
+        - createTable:
+            tableName: users_roles
+            columns:
+              - column:
+                  name: user_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+              - column:
+                  name: role_id
+                  type: bigint
+                  constraints:
+                    nullable: false
