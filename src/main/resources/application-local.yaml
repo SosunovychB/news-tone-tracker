@@ -1,0 +1,10 @@
+server:
+  port: 8060
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/core-db
+    username: user
+    password: password
+  liquibase:
+    drop-first: false

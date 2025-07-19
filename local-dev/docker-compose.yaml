@@ -1,0 +1,38 @@
+version: "3"
+
+services:
+  postgres_db:
+    container_name: postgres_db
+    image: postgres:16
+    healthcheck:
+      test: [ "CMD", "pg_isready", "-q", "-d", "postgres", "-U", "user" ]
+      timeout: 45s
+      interval: 10s
+      retries: 10
+    restart: always
+    environment:
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=core-db
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+#  news-tone-tracker:
+#    container_name: news-tone-tracker
+#    image: news-tone-tracker:1.0.0
+#    build: .
+#    depends_on:
+#      postgres_db:
+#        condition: service_healthy
+#    restart: on-failure
+#    ports:
+#      - "8080:8080"
+#    environment:
+#      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres_db:5432
+#      - SPRING_DATASOURCE_USERNAME=user
+#      - SPRING_DATASOURCE_PASSWORD=password
+
+volumes:
+  postgres_data:
