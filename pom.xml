@@ -10,8 +10,8 @@
 	</parent>
 	<groupId>com.example</groupId>
 	<artifactId>news-tone-tracker </artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>news-tone-tracker </name>
+	<version>1.0.0</version>
+	<name>news-tone-tracker</name>
 	<description>Backend project based on Spring Boot</description>
 	<url/>
 	<licenses>
@@ -91,6 +91,11 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
